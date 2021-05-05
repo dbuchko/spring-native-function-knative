@@ -240,6 +240,7 @@ $ TANZU_PASSWORD=password
 # create secret
 $ export SECRET_NAME=registry-credentials
 $ export SECRET_NS=hello-function
+$ kubectl create ns ${SECRET_NS}
 $ kubectl create secret docker-registry ${SECRET_NAME} -n ${SECRET_NS} \
     --docker-server=registry.pivotal.io \
     --docker-username=${TANZU_LOGIN} --docker-password=${TANZU_PASSWORD}
